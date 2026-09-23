@@ -141,7 +141,7 @@
         2. mdi-content-mail
         3. mdi-communication-email
         -->
-        <a aria-label="Navigate to the Contact section" href="#travels" class="waves-effect waves-dark teal-text"><i
+        <a aria-label="Navigate to the Travels section" href="#travels" class="waves-effect waves-dark teal-text"><i
             class="mdi-maps-flight small"></i><span>Travels</span></a>
       </li>
 
@@ -157,7 +157,7 @@
         <!-- <a aria-label="Open Varad's resume in a new tab" href="#resume" target="_blank"
           onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
           class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Varad's resume in a new tab" href="assets/resume/Cindy Resume.pdf" target="_blank"
+        <a aria-label="Open Cindy's resume in a new tab" href="assets/resume/Cindy Resume.pdf" target="_blank"
         class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
       </li>
     </ul>
@@ -203,7 +203,7 @@
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Open Varad's Resume in a new tab"
+        <a aria-label="Open Cindy's Resume in a new tab"
           href="https://drive.google.com/file/d/1B6MZ1z0-7NsefC3Lm_q-uhib28MTqpE9/view?usp=sharing" target="_blank"
           class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
@@ -342,89 +342,8 @@
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
-        <div class="row">
+        <div id="dynamic-projects" class="row">
 
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Claw Machine Game" src="assets/img/clawmachinestart.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Claw Machine Game<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Claw machine game on the DE1SoC
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Details</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  Claw Machine Game on the DE1SoC board with VGA Display coded in C. Complete with audio, various inputs, and double buffering animation.
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for project" href="https://github.com/cindyschen/claw-machine-game-DE1SoC"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-green tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Mapping with Care" src="assets/img/mappingwithcare.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Mapping with Care<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  GIS software system catered towards people with disabilities.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Details</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  Responsive GIS software system catered towards people with disabilities coded in C++. Complete with pathfinding, search options, graphics with user interaction, and more.
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Piano simulator -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Piano Simulator" src="assets/img/pianosim.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Piano Simulator<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                    Piano Simulator on the DE1-SoC board.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Details</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  Piano Simulator on the DE1-SoC board with the VGA Display coded in Verilog. Options are available to change tone, pitch, and play a preset song. 
-
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- ************* -->
         </div>
       </div>
     </section>
@@ -652,6 +571,82 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+  </script>
+  <script>
+    const projects = [
+  {
+    name: "Claw Machine Game",
+    description:
+      "Claw Machine Game on the DE1SoC board with VGA Display coded in C. Complete with audio, various inputs, and double buffering animation.",
+    image: "assets/img/clawmachinestart.png"
+  },
+  {
+    name: "Mapping with Care",
+    description:
+      "Responsive GIS software system catered towards people with disabilities coded in C++. Complete with pathfinding, search options, graphics with user interaction, and more.",
+    image: "assets/img/mappingwithcare.png"
+  },
+  {
+    name: "Piano Simulator",
+    description:
+      "Piano Simulator on the DE1-SoC board with the VGA Display coded in Verilog. Options are available to change tone, pitch, and play a preset song.",
+    image: "assets/img/pianosim.jpg"
+  },
+  {
+    name: "Discord Valorant Bot",
+    description:
+      "Bot for the game Valorant, coded in Python. Integrated with external APIs to automatically retrieve match statistics and convert the data to meaningful performance metrics to analyze competitive performance",
+    image: "assets/img/cynbot.png"
+  }
+];
+
+    function showProjects(){
+      const projectsContainer = document.getElementById("dynamic-projects");
+      projects.slice(0, 2).forEach(project => {
+        projectsContainer.innerHTML += `
+          <div class="col s12 m6 ">
+            <div class="card large">
+              <div class="card-image">
+                <img alt="${project.name}" src="${project.image}" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">${project.name}</span>
+                <p>
+                  ${project.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      projectsContainer.innerHTML += `  <div class="center-align pt-20">
+    <button id="load-more" class="btn waves-effect waves-light teal" onclick="showMoreProjects()">
+      Load More
+    </button>
+  </div>`;
+    }
+    showProjects();
+    showMoreProjects = () => {
+      const projectsContainer = document.getElementById("dynamic-projects");
+      projects.slice(2).forEach(project => {
+        projectsContainer.innerHTML += `
+          <div class="col s12 m6 ">
+            <div class="card large">
+              <div class="card-image">
+                <img alt="${project.name}" src="${project.image}" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">${project.name}</span>
+                <p>
+                  ${project.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      document.getElementById("load-more").remove();
+    }
   </script>
 </body>
 
