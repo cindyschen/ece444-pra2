@@ -341,6 +341,7 @@
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
+      <div class="container"> <input type="text" id="search-input" placeholder="Search projects..." oninput="filterProjects()" /></div>
       <div class="container">
         <div id="dynamic-projects" class="row">
 
@@ -646,6 +647,35 @@
         `;
       });
       document.getElementById("load-more").remove();
+    }
+
+    function filterProjects() {
+      const input = document.getElementById("search-input");
+      const filter = input.value.toLowerCase();
+      const projectsContainer = document.getElementById("dynamic-projects");
+      projectsContainer.innerHTML = "";
+
+      const filteredProjects = projects.filter(project =>
+        project.name.toLowerCase().includes(filter) || project.description.toLowerCase().includes(filter)
+      );
+
+      filteredProjects.forEach(project => {
+        projectsContainer.innerHTML += `
+          <div class="col s12 m6 ">
+            <div class="card large">
+              <div class="card-image">
+                <img alt="${project.name}" src="${project.image}" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">${project.name}</span>
+                <p>
+                  ${project.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
     }
   </script>
 </body>
